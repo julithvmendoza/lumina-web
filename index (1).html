@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA | Accesorios con luz propia</title>
+    <style>
+        :root {
+            --primary: #b76e79;
+            --primary-dark: #92535d;
+            --bg-light: #fdfbf7;
+            --text-dark: #2c2c2c;
+            --white: #ffffff;
+            --gray: #777777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container h1 {
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .logo-container h1 span {
+            color: var(--primary);
+        }
+
+        .logo-container p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        footer {
+            background-color: #222;
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <h1>L U M I N A</h1>
+            <p>✦ ACCESORIOS CON LUZ PROPIA ✦</p>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Colecciones</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h2>Detalles que iluminan tu esencia</h2>
+        <p>Descubre nuestra nueva colección de joyería, bolsos y complementos de diseño contemporáneo.</p>
+        <a href="#catalogo" class="btn">Ver Colección</a>
+    </section>
+
+    <div class="container" id="catalogo">
+        <div class="section-title">
+            <h3>Nuestras Colecciones</h3>
+            <p>Explora accesorios exclusivos desde $30.000 COP hasta $150.000 COP</p>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80" alt="Gafas de Sol" class="product-img">
+                <div class="product-info">
+                    <div class="product-category">Gafas de Sol</div>
+                    <h4 class="product-title">Gafas Edición Limitada Retro</h4>
+                    <div class="product-price">$30.000 COP</div>
+                    <a href="#" class="buy-btn">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Joyería" class="product-img">
+                <div class="product-info">
+                    <div class="product-category">Joyería Ligera</div>
+                    <h4 class="product-title">Set de Anillos y Cadena Dorada</h4>
+                    <div class="product-price">$65.000 COP</div>
+                    <a href="#" class="buy-btn">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=600&q=80" alt="Complementos" class="product-img">
+                <div class="product-info">
+                    <div class="product-category">Complementos</div>
+                    <h4 class="product-title">Pañuelo Estampado Versátil</h4>
+                    <div class="product-price">$45.000 COP</div>
+                    <a href="#" class="buy-btn">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="Bolsos" class="product-img">
+                <div class="product-info">
+                    <div class="product-category">Bolsos & Carteras</div>
+                    <h4 class="product-title">Bolso Contemporáneo Estructurado</h4>
+                    <div class="product-price">$150.000 COP</div>
+                    <a href="#" class="buy-btn">Añadir al carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contacto">
+        <p>&copy; 2026 LUMINA Accesorios. Todos los derechos reservados.</p>
+        <p>Ciénaga, Magdalena, Colombia | Contacto: immontessori@hotmail.com</p>
+    </footer>
+
+</body>
+</html>
